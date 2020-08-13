@@ -29,7 +29,7 @@ class DefaultStore <S: ReduxState>: Store {
     
     var willChange = PassthroughSubject<Void, Never>()
     
-    private var state: S {
+    @Published private var state: S {
         didSet {
             willChange.send()
         }
